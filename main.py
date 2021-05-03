@@ -1,8 +1,13 @@
 import time
 import tkinter
 import random
+from icon import icon
+from tkinter import PhotoImage
+import base64
 
 window = tkinter.Tk()
+icon = base64.b64decode(icon)
+icon = PhotoImage(data=icon)
 window.title(' ')
 # window.geometry('310x100')
 window.resizable(False, False)
@@ -21,5 +26,6 @@ def clock():
     label.after(100, clock)
 
 clock()
-window.iconbitmap('clock.ico')
+# window.iconbitmap('clock.ico')
+window.wm_iconphoto(True, icon)
 window.mainloop()
